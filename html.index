@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Comercial Lorena</title>
+</head>
+<body>
+
+    <h1>Comercial Lorena</h1>
+    <p>Bienvenidos a nuestra tienda</p>
+
+    <h2>Productos</h2>
+    <ul>
+        <li>Celulares</li>
+        <li>Accesorios</li>
+        <li>Recargas</li>
+    </ul>
+
+    <h2>Contacto</h2>
+    <p>WhatsApp: 8888-8888</p>
+
+</body>
+</html>
