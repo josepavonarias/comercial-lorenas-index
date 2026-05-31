@@ -2,123 +2,91 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Comercial Lorena</title>
-
-    <!-- Google Analytics (pega tu código aquí) -->
-    <!-- Ejemplo:
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXX"></script>
-    -->
-
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
+    <title>Iniciar Sesión - Comercial Lorena</title>
+    
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
         body {
             font-family: Arial, sans-serif;
-            background: #eef2f3;
-            margin: 0;
+            background: linear-gradient(135deg, #2c3e50, #3498db);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
-        header {
-            background: #2c3e50;
-            color: white;
-            padding: 20px;
+        
+        .login-container {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            width: 350px;
             text-align: center;
         }
-        .container {
-            width: 90%;
-            margin: auto;
+        
+        h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
         }
-        .card {
-            background: white;
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 12px;
-            box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
-        }
-        ul {
-            list-style: none;
-            padding: 0;
-        }
-        li {
-            padding: 10px;
-            border-bottom: 1px solid #ddd;
-        }
-        .whatsapp {
-            display: inline-block;
-            padding: 12px 20px;
-            background: #25D366;
-            color: white;
-            text-decoration: none;
+        
+        input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
             border-radius: 8px;
+            font-size: 16px;
+        }
+        
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #2c3e50;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
             margin-top: 10px;
         }
-        canvas {
-            max-width: 100%;
+        
+        button:hover {
+            background: #3498db;
+        }
+        
+        .error {
+            color: red;
+            margin-top: 10px;
+            font-size: 14px;
         }
     </style>
 </head>
-
 <body>
-
-<header>
-    <h1>Comercial Lorena</h1>
-    <p>Venta de celulares, accesorios y recargas</p>
-</header>
-
-<div class="container">
-
-    <div class="card">
-        <h2>📦 Productos</h2>
-        <ul>
-            <li>📱 Celulares</li>
-            <li>🎧 Accesorios</li>
-            <li>💳 Recargas</li>
-        </ul>
+    <div class="login-container">
+        <h2>🔐 Iniciar Sesión</h2>
+        <input type="text" id="usuario" placeholder="Usuario">
+        <input type="password" id="password" placeholder="Contraseña">
+        <button onclick="verificarLogin()">Ingresar</button>
+        <div id="mensajeError" class="error"></div>
     </div>
 
-    <div class="card">
-        <h2>📊 Visitas por producto</h2>
-        <canvas id="grafico1"></canvas>
-    </div>
-
-    <div class="card">
-        <h2>🌐 Medio de acceso</h2>
-        <canvas id="grafico2"></canvas>
-    </div>
-
-    <div class="card">
-        <h2>📲 Contáctanos</h2>
-        <p>Haz tu pedido por WhatsApp</p>
-        <a class="whatsapp" href="https://wa.me/50588888888" target="_blank">
-            Escribir por WhatsApp
-        </a>
-    </div>
-
-</div>
-
-<script>
-    // Gráfico 1: Productos
-    new Chart(document.getElementById('grafico1'), {
-        type: 'bar',
-        data: {
-            labels: ['Celulares', 'Accesorios', 'Recargas'],
-            datasets: [{
-                label: 'Visitas',
-                data: [15, 10, 7],
-            }]
+    <script>
+        function verificarLogin() {
+            const usuario = document.getElementById('usuario').value;
+            const password = document.getElementById('password').value;
+            
+            // Cambia estos valores por tu usuario y contraseña reales
+            if (usuario === "admin" && password === "1234") {
+                window.location.href = "dashboard.html";
+            } else {
+                document.getElementById('mensajeError').innerText = "Usuario o contraseña incorrectos";
+            }
         }
-    });
-
-    // Gráfico 2: Medios
-    new Chart(document.getElementById('grafico2'), {
-        type: 'pie',
-        data: {
-            labels: ['WhatsApp', 'Directo', 'Facebook'],
-            datasets: [{
-                data: [12, 5, 8],
-            }]
-        }
-    });
-</script>
-
+    </script>
 </body>
 </html>
