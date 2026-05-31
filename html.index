@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <title>Iniciar Sesión - Comercial Lorena</title>
-    
     <style>
         * {
             margin: 0;
@@ -80,7 +79,6 @@
             const usuario = document.getElementById('usuario').value;
             const password = document.getElementById('password').value;
             
-            // Cambia estos valores por tu usuario y contraseña reales
             if (usuario === "admin" && password === "1234") {
                 window.location.href = "dashboard.html";
             } else {
